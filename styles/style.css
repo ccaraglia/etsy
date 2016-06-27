@@ -6,7 +6,7 @@ font-family: Helvetica, Arial, sans-serif;
 body {background: #E9EFD6;}
 
 #container{
-    display: flex;
+  /*  display: flex; */
     flex-flow: row wrap;
 
 }
@@ -66,6 +66,8 @@ input{
 .itemsContainer{
     flex: 3;
     padding: 2em;
+    max-width: 29%;
+    display: inline-block;
     background: white;
     margin: 20px;
     box-shadow: 4px 4px 5px #cecece;
