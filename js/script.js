@@ -66,20 +66,22 @@ var ItemsView = Backbone.View.extend({
         var htmlPic = ''
 
             for (var i=0; i < this.coll.models.length; i++){
-//console.log(this.coll.models[i].attributes.Images.length)
-                if (this.coll.models[i].attributes.Images.length > 0){
-                    htmlPic = this.coll.models[i].attributes.Images[0].url_170x135
+console.log(this.coll.models[i].get('listing_id'))
+console.log(this.coll.models[i].get('Images')[0].url_75x75)
+
+                if (this.coll.models[i].get('Images').length > 0){
+                    htmlPic = this.coll.models[i].get('Images')[0].url_170x135
 
                 }else{
                     htmlPic='./placeholder.jpg'
 
                 }
 
-                stringHTML += '<div class="itemsContainer" data-pid="'+this.coll.models[i].attributes.listing_id+'">'
-                stringHTML +=     '<p class="title">' + this.coll.models[i].attributes.title + '</p>' +
+                stringHTML += '<div class="itemsContainer" data-pid="'+this.coll.models[i].get('listing_id')+'">'
+                stringHTML +=     '<p class="title">' + this.coll.models[i].get('title') + '</p>' +
                                   '<img src="' + htmlPic + '">' +
                                   '<p class="price">' +
-                                      this.coll.models[i].attributes.currency_code + ' ' + this.coll.models[i].attributes.price +
+                                      this.coll.models[i].get('currency_code') + ' ' + this.coll.models[i].get('price') +
                                   '</p>'
                 stringHTML+= '</div>'
             }
@@ -175,6 +177,7 @@ var EtsyRouter = Backbone.Router.extend({
                     api_key: searchItems._key,
                     includes: 'Images,Shop',
                     keywords: keyword,
+                    limit:24,
                     processData: true,
                 }
 
@@ -200,6 +203,7 @@ var EtsyRouter = Backbone.Router.extend({
             data: {
                 api_key: listItems._key,
                 includes: 'Images,Shop',
+                limit: 24,
                 processData: true,
 
             }
