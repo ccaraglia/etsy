@@ -75,11 +75,11 @@ var ItemsView = Backbone.View.extend({
 
                 }
 
-                stringHTML += '<div class="itemsContainer" data-pid="'+this.coll.models[i].get('listing_id')+'">'
-                stringHTML +=     '<p class="title">' + this.coll.models[i].get('title') + '</p>' +
+                stringHTML += '<div class="itemsContainer" data-pid="'+this.coll.models[i].attributes.listing_id+'">'
+                stringHTML +=     '<p class="title">' + this.coll.models[i].attributes.title + '</p>' +
                                   '<img src="' + htmlPic + '">' +
                                   '<p class="price">' +
-                                      this.coll.models[i].get('currency_code') + ' ' + this.coll.models[i].get('price') +
+                                      this.coll.models[i].attributes.currency_code + ' ' + this.coll.models[i].attributes.price +
                                   '</p>'
                 stringHTML+= '</div>'
             }
