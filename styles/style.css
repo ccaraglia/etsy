@@ -67,6 +67,7 @@ input{
     padding: 2em;
     background: white;
     margin: 20px;
+    min-width: 29%;
     box-shadow: 4px 4px 5px #cecece;
 }
 
