@@ -8,6 +8,7 @@ body {background: #E9EFD6;}
 #container{
     display: flex;
     flex-flow: row wrap;
+
 }
 
 #logo{
@@ -68,6 +69,7 @@ input{
     background: white;
     margin: 20px;
     box-shadow: 4px 4px 5px #cecece;
+
 }
 
 .itemsContainer img{
